@@ -1,0 +1,22 @@
+extend type Query {
+	allPolicies: [Policy]!
+	policyById(policyId: ID): Policy
+	countOfPolicies: Long!
+}
+
+type Policy {
+	policyId: ID!
+	firstName: String!
+	lastName: String!
+	type: PolicyType!
+	additionalDetails: String
+}
+
+enum PolicyType {
+	TWOWHEELER,
+	FOURWHEELER
+}
+
+type Mutation {
+	newPolicy(policyId: ID!, firstName: String!, lastName: String!, type: String!): Policy!
+}

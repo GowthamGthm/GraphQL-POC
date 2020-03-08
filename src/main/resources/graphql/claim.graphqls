@@ -1,0 +1,12 @@
+extend type Query {
+	allClaims: [Claim]!
+	claimById(claimId: ID): Claim
+	countOfClaims: Long!
+}
+
+type Claim {
+	claimId: ID!
+	registeredBy: String!
+	isSettled: Boolean!
+	policy: Policy!	
+}

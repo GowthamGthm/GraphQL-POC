@@ -1,0 +1,11 @@
+type Query {
+	bookInfos: [BookInfo!]!
+	bookByTitle(title: String): BookInfo
+}
+
+type BookInfo {
+	userId: Int!
+	id: Int!
+	title: String
+	completed: Boolean
+}
